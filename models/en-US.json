@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "quiz game",
+      "invocationName": "italian regions",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -26,51 +26,42 @@
         {
           "name": "AnswerIntent",
           "samples": [
-            "{StateName}",
+            "{Region}",
             "{Capital}",
-            "{StatehoodYear}",
-            "{StatehoodOrder}",
-            "{Abbreviation}",
-            "tell me about {StateName}",
+            "{HighestMountain}",
+            "{LongestMainRiver}",
+            "tell me about {Region}",
             "tell me about {Capital}",
-            "tell me about {StatehoodYear}",
-            "tell me about {StatehoodOrder}",
-            "tell me about {Abbreviation}",
-            "what do you know about {StateName}",
+            "tell me about {HighestMountain}",
+            "tell me about {LongestMainRiver}",
+            "what do you know about {Region}",
             "what do you know about {Capital}",
-            "what do you know about {StatehoodYear}",
-            "what do you know about {StatehoodOrder}",
-            "what do you know about {Abbreviation}",
-            "{StateName} information",
+            "what do you know about {HighestMountain}",
+            "what do you know about {LongestMainRiver}",
+            "{Region} information",
             "{Capital} information",
-            "{StatehoodYear} information",
-            "{StatehoodOrder} information",
-            "{Abbreviation} information"
+            "{HighestMountain} information",
+            "{LongestMainRiver} information"
           ],
           "slots": [
             {
-              "name": "StateName",
-              "type": "AMAZON.US_STATE",
+              "name": "Region",
+              "type": "AMAZON.AT_REGION",
               "samples": []
             },
             {
               "name": "Capital",
-              "type": "AMAZON.US_CITY",
+              "type": "AMAZON.AT_CITY",
               "samples": []
             },
             {
-              "name": "StatehoodYear",
-              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "name": "HighestMountain",
+              "type": "AMAZON.Landform",
               "samples": []
             },
             {
-              "name": "Abbreviation",
-              "type": "US_STATE_ABBR",
-              "samples": []
-            },
-            {
-              "name": "StatehoodOrder",
-              "type": "AMAZON.NUMBER",
+              "name": "LongestMainRiver",
+              "type": "AMAZON.Landform",
               "samples": []
             }
           ]
