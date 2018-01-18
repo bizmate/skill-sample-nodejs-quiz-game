@@ -13,7 +13,7 @@ const APP_ID = 'amzn1.ask.skill.83557d61-a75f-4986-a821-0d44e092e4c5';
 //like "Ohio."  The skill will speak the sentence from this function, pulling the data values from the appropriate record in your data.
 function getSpeechDescription(item)
 {
-    let sentence =  " The capital of " + item.Region + " is " + item.Capital + ", its highest mountain is  " + item.HighestMountain + " and the main river in this region is called " + item.LongestMainRiver + ".  I've added " + item.Region + " to your Alexa app.  Which other Italian region would you like to know about?";
+    let sentence =  " The capital of " + item.Region + " is " + item.Capital + ", its highest mountain is  " + item.HighestMountain + " and the main river in this region is called " + item.LongestMainRiver + ". Which other Italian region would you like to know about?";
     return sentence;
 }
 
@@ -85,6 +85,9 @@ const REPROMPT_SPEECH = "Which other region or capital would you like to know ab
 //This is the message a user will hear when they ask Alexa for help in your skill.
 const HELP_MESSAGE = "I know lots of things about Italy.  You can ask me about a region or a capital, and I'll tell you what I know.  You can also test your knowledge by asking me to start a quiz.  What would you like to do?";
 
+// This is the message for unhandled use cases
+const UNHADLED_MESSAGE = "Italian regions has not understood the request. Please try again by starting a quiz or exit the skill.";
+
 
 //This is the response a user will receive when they ask about something we weren't expecting.  For example, say "pizza" to your
 //skill when it starts.  This is the response you will receive.
@@ -122,26 +125,26 @@ function getLargeImage(item) { return "https://m.media-amazon.com/images/G/01/mo
 //TODO: Replace this data with your own.
 //=========================================================================================================================================
 const data = [
-        {Region: "Lombardia",           CapitalCity: "Milan",       HighestMountain: "Bernina",             LongestMainRiver: "Adda" },
-        {Region: "Abruzzo",             CapitalCity: "L'Aquila",    HighestMountain: "Gran Sasso d'Italia", LongestMainRiver: "Aterno-Pescara" },
-        {Region: "Basilicata",          CapitalCity: "Potenza",     HighestMountain: "Monte Pollino",       LongestMainRiver: "Basento" },
-        {Region: "Calabria",            CapitalCity: "Catanzaro",   HighestMountain: "Serra Dolcedorme",    LongestMainRiver: "Crati" },
-        {Region: "Campania",            CapitalCity: "Napoli",      HighestMountain: "Matese",              LongestMainRiver: "Calore Irpino" },
-        {Region: "Emilia Romagna",      CapitalCity: "Bologna",     HighestMountain: "Monte Cimone",        LongestMainRiver: "Panaro" },
-        {Region: "Friuli Venezia Giulia",  CapitalCity: "Trieste",  HighestMountain: "Alpi Carniche",       LongestMainRiver: "Tagliamento" },
-        {Region: "Lazio",               CapitalCity: "Roma",        HighestMountain: "Monti della Laga",    LongestMainRiver: "Tevere" },
-        {Region: "Liguria",             CapitalCity: "Genova",      HighestMountain: "Alpi del Marguareis", LongestMainRiver: "Tanaro" },
-        {Region: "Marche",              CapitalCity: "Ancona",      HighestMountain: "Monti Sibillini",     LongestMainRiver: "Metauro" },
-        {Region: "Molise",              CapitalCity: "Campobasso",  HighestMountain: "Monti della Meta",    LongestMainRiver: "Volturno" },
-        {Region: "Piemonte",            CapitalCity: "Torino",      HighestMountain: "Monte Rosa",          LongestMainRiver: "Po" },
-        {Region: "Puglia",              CapitalCity: "Bari",        HighestMountain: "Subappennino Dauno",  LongestMainRiver: "Bradano" },
-        {Region: "Sardegna",            CapitalCity: "Cagliari",    HighestMountain: "Gennargentu",         LongestMainRiver: "Tirso" },
-        {Region: "Sicilia",             CapitalCity: "Palermo",     HighestMountain: "Etna",                LongestMainRiver: "Salso" },
-        {Region: "Toscana",             CapitalCity: "Firenze",     HighestMountain: "Monte Prado",         LongestMainRiver: "Arno" },
-        {Region: "Trentino Alto Adige", CapitalCity: "Trento",      HighestMountain: "Gruppo Ortles Cevedale", LongestMainRiver: "Adige" },
-        {Region: "Umbria",              CapitaCityl: "Perugia",     HighestMountain: "Monti Sibillini",     LongestMainRiver: "Nera" },
-        {Region: "Valle d'Aosta",       CapitalCity: "Aosta",       HighestMountain: "Monte Bianco",        LongestMainRiver: "Dora Baltea" },
-        {Region: "Veneto",              CapitalCity: "Venezia",     HighestMountain: "Marmolada",           LongestMainRiver: "Piave" }
+        {Region: "Lombardia",           Capital: "Milan",       HighestMountain: "Bernina",             LongestMainRiver: "Adda" },
+        {Region: "Abruzzo",             Capital: "L'Aquila",    HighestMountain: "Gran Sasso",          LongestMainRiver: "Aterno Pescara" },
+        {Region: "Basilicata",          Capital: "Potenza",     HighestMountain: "Monte Pollino",       LongestMainRiver: "Basento" },
+        {Region: "Calabria",            Capital: "Catanzaro",   HighestMountain: "Serra Dolcedorme",    LongestMainRiver: "Crati" },
+        {Region: "Campania",            Capital: "Napoli",      HighestMountain: "Matese",              LongestMainRiver: "Calore Irpino" },
+        {Region: "Emilia Romagna",      Capital: "Bologna",     HighestMountain: "Monte Cimone",        LongestMainRiver: "Panaro" },
+        {Region: "Friuli Venezia Giulia",  Capital: "Trieste",  HighestMountain: "Alpi Carniche",       LongestMainRiver: "Tagliamento" },
+        {Region: "Lazio",               Capital: "Roma",        HighestMountain: "Monti della Laga",    LongestMainRiver: "Tevere" },
+        {Region: "Liguria",             Capital: "Genova",      HighestMountain: "Alpi del Marguareis", LongestMainRiver: "Tanaro" },
+        {Region: "Marche",              Capital: "Ancona",      HighestMountain: "Monti Vettore",       LongestMainRiver: "Metauro" },
+        {Region: "Molise",              Capital: "Campobasso",  HighestMountain: "Monti della Meta",    LongestMainRiver: "Volturno" },
+        {Region: "Piemonte",            Capital: "Torino",      HighestMountain: "Monte Rosa",          LongestMainRiver: "Po" },
+        {Region: "Puglia",              Capital: "Bari",        HighestMountain: "Subappennino Dauno",  LongestMainRiver: "Bradano" },
+        {Region: "Sardegna",            Capital: "Cagliari",    HighestMountain: "Gennargentu",         LongestMainRiver: "Tirso" },
+        {Region: "Sicilia",             Capital: "Palermo",     HighestMountain: "Etna",                LongestMainRiver: "Salso" },
+        {Region: "Toscana",             Capital: "Firenze",     HighestMountain: "Monte Prado",         LongestMainRiver: "Arno" },
+        {Region: "Trentino Alto Adige", Capital: "Trento",      HighestMountain: "Gruppo Ortles Cevedale", LongestMainRiver: "Adige" },
+        {Region: "Umbria",              Capital: "Perugia",     HighestMountain: "Sibillini",           LongestMainRiver: "Nera" },
+        {Region: "Valle d'Aosta",       Capital: "Aosta",       HighestMountain: "Monte Bianco",        LongestMainRiver: "Dora Baltea" },
+        {Region: "Veneto",              Capital: "Venezia",     HighestMountain: "Marmolada",           LongestMainRiver: "Piave" }
     ];
 
 //=========================================================================================================================================
@@ -185,6 +188,7 @@ const handlers = {
         this.emit(":responseReady");
     },
     "Unhandled": function() {
+        this.response.speak(UNHADLED_MESSAGE);
         this.handler.state = states.START;
         this.emitWithState("Start");
     }
@@ -241,6 +245,7 @@ const startHandlers = Alexa.CreateStateHandler(states.START,{
         this.emit(":responseReady");
     },
     "Unhandled": function() {
+        this.response.speak(UNHADLED_MESSAGE);
         this.emitWithState("Start");
     }
 });
@@ -334,6 +339,7 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
         this.emit(":responseReady");
     },
     "Unhandled": function() {
+        this.response.speak(UNHADLED_MESSAGE);
         this.emitWithState("AnswerIntent");
     }
 });

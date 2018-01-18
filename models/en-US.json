@@ -9,19 +9,31 @@
         },
         {
           "name": "AMAZON.HelpIntent",
-          "samples": []
+          "samples": [
+            "help",
+            "help me",
+            "what can i do"
+          ]
         },
         {
           "name": "AMAZON.PauseIntent",
-          "samples": []
+          "samples": [
+            "pause"
+          ]
         },
         {
           "name": "AMAZON.StartOverIntent",
-          "samples": []
+          "samples": [
+            "start over"
+          ]
         },
         {
           "name": "AMAZON.StopIntent",
-          "samples": []
+          "samples": [
+            "stop",
+            "exit",
+            "leave"
+          ]
         },
         {
           "name": "AnswerIntent",
@@ -32,16 +44,10 @@
             "{LongestMainRiver}",
             "tell me about {Region}",
             "tell me about {Capital}",
-            "tell me about {HighestMountain}",
-            "tell me about {LongestMainRiver}",
             "what do you know about {Region}",
             "what do you know about {Capital}",
-            "what do you know about {HighestMountain}",
-            "what do you know about {LongestMainRiver}",
             "{Region} information",
-            "{Capital} information",
-            "{HighestMountain} information",
-            "{LongestMainRiver} information"
+            "{Capital} information"
           ],
           "slots": [
             {
@@ -56,12 +62,12 @@
             },
             {
               "name": "HighestMountain",
-              "type": "AMAZON.Landform",
+              "type": "AMAZON.AT_REGION",
               "samples": []
             },
             {
               "name": "LongestMainRiver",
-              "type": "AMAZON.Landform",
+              "type": "AMAZON.AT_REGION",
               "samples": []
             }
           ]
@@ -70,270 +76,11 @@
           "name": "QuizIntent",
           "samples": [
             "start a quiz",
+            "start quiz",
             "start a quiz game",
-            "and start a quiz",
-            "and quiz me",
-            "for a quiz",
-            "a quiz"
+            "quiz me"
           ],
           "slots": []
-        }
-      ],
-      "types": [
-        {
-          "name": "US_STATE_ABBR",
-          "values": [
-            {
-              "name": {
-                "value": "AK"
-              }
-            },
-            {
-              "name": {
-                "value": "AL"
-              }
-            },
-            {
-              "name": {
-                "value": "AZ"
-              }
-            },
-            {
-              "name": {
-                "value": "AR"
-              }
-            },
-            {
-              "name": {
-                "value": "CA"
-              }
-            },
-            {
-              "name": {
-                "value": "CO"
-              }
-            },
-            {
-              "name": {
-                "value": "CT"
-              }
-            },
-            {
-              "name": {
-                "value": "DE"
-              }
-            },
-            {
-              "name": {
-                "value": "FL"
-              }
-            },
-            {
-              "name": {
-                "value": "GA"
-              }
-            },
-            {
-              "name": {
-                "value": "HI"
-              }
-            },
-            {
-              "name": {
-                "value": "ID"
-              }
-            },
-            {
-              "name": {
-                "value": "IL"
-              }
-            },
-            {
-              "name": {
-                "value": "IN"
-              }
-            },
-            {
-              "name": {
-                "value": "IA"
-              }
-            },
-            {
-              "name": {
-                "value": "KS"
-              }
-            },
-            {
-              "name": {
-                "value": "KY"
-              }
-            },
-            {
-              "name": {
-                "value": "LA"
-              }
-            },
-            {
-              "name": {
-                "value": "ME"
-              }
-            },
-            {
-              "name": {
-                "value": "MD"
-              }
-            },
-            {
-              "name": {
-                "value": "MA"
-              }
-            },
-            {
-              "name": {
-                "value": "MI"
-              }
-            },
-            {
-              "name": {
-                "value": "MN"
-              }
-            },
-            {
-              "name": {
-                "value": "MS"
-              }
-            },
-            {
-              "name": {
-                "value": "MO"
-              }
-            },
-            {
-              "name": {
-                "value": "MT"
-              }
-            },
-            {
-              "name": {
-                "value": "NE"
-              }
-            },
-            {
-              "name": {
-                "value": "NV"
-              }
-            },
-            {
-              "name": {
-                "value": "NH"
-              }
-            },
-            {
-              "name": {
-                "value": "NJ"
-              }
-            },
-            {
-              "name": {
-                "value": "NM"
-              }
-            },
-            {
-              "name": {
-                "value": "NY"
-              }
-            },
-            {
-              "name": {
-                "value": "NC"
-              }
-            },
-            {
-              "name": {
-                "value": "ND"
-              }
-            },
-            {
-              "name": {
-                "value": "OH"
-              }
-            },
-            {
-              "name": {
-                "value": "OK"
-              }
-            },
-            {
-              "name": {
-                "value": "OR"
-              }
-            },
-            {
-              "name": {
-                "value": "PA"
-              }
-            },
-            {
-              "name": {
-                "value": "RI"
-              }
-            },
-            {
-              "name": {
-                "value": "SC"
-              }
-            },
-            {
-              "name": {
-                "value": "SD"
-              }
-            },
-            {
-              "name": {
-                "value": "TN"
-              }
-            },
-            {
-              "name": {
-                "value": "TX"
-              }
-            },
-            {
-              "name": {
-                "value": "UT"
-              }
-            },
-            {
-              "name": {
-                "value": "VT"
-              }
-            },
-            {
-              "name": {
-                "value": "VA"
-              }
-            },
-            {
-              "name": {
-                "value": "WA"
-              }
-            },
-            {
-              "name": {
-                "value": "WV"
-              }
-            },
-            {
-              "name": {
-                "value": "WI"
-              }
-            },
-            {
-              "name": {
-                "value": "WY"
-              }
-            }
-          ]
         }
       ]
     }
